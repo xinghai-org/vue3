@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <template id="my-app" >
+        <div>
+            <h2 :class="'app'" >class绑定字符串1</h2>
+            <h2 :class="className" >绑定字符串2</h2>
+            <h2 :class="{'active':isActive}" >绑定对象</h2>
+            <h2 :class="{active:isActive}" >绑定对象2</h2>
+            <h2 :class="{active:isActive,title:true}" >绑定对象3</h2>
+            <h2 class='abc cba' :class="{active:isActive,title:true}" >绑定对象4</h2>
+            <h2 class='abc cba' :class="aObject" >绑定对象5</h2>
+            <h2 class='abc cba' :class="getObject()" >绑定对象6</h2>
+            <button @click="toggle" >点我</button>
+        </div>
+    </template>
+
+    <script src="../js/vue.js" ></script>
+
+    <script>
+        Vue.createApp({
+            template:'#my-app',
+            data:()=>{
+                return{
+                    className:"Hello World",
+                    isActive:true,
+                    aObject:{
+                        'activate':false,
+                        'title':true
+                    }
+                }
+            },
+            methods:{
+              getObject(){
+                return {
+                    'activate':false,
+                    'title':true   
+                }
+              },
+              toggle(){
+                this.isActive = !this.isActive
+              }
+            }
+        }).mount('#app')
+    </script>
+
+</body>
+</html>

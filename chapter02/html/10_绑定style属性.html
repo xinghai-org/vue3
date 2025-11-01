@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <template id="my-app" >
+        <div>
+            <h2 :style="{color:finalColor,fontSize: '16px'}">a</h2>
+            <h2 :style="{color:finalColor,fontSize: fontSize + 'px' }">b</h2>
+        </div>
+    </template>
+
+    <script src="../js/vue.js" ></script>
+
+    <script>
+        Vue.createApp({
+            template:'#my-app',
+            data:()=>{
+                return{
+                    finalColor:'red',
+                    fontSize:'20px'
+                }
+            },
+            methods:{
+              
+            }
+        }).mount('#app')
+    </script>
+
+</body>
+</html>

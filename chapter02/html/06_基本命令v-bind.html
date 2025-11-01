@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app" ></div>
+    <template id="my-app" >
+        <!-- 语法糖 -->
+        <img :src="url">
+        <!-- 语法 -->
+        <img v-bind:src="url">
+        <img src="url">
+    </template>
+    <script src="../js/vue.js" ></script>
+    <script>
+        Vue.createApp({
+            template:'#my-app',
+            data(){
+                return {
+                    url:'https://v2.cn.vuejs.org/images/logo.svg'
+                }
+            },
+
+        }).mount('#app')
+    </script>
+</body>
+</html>

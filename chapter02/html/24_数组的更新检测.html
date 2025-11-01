@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <template id="my-app" >
+        <ul>
+            <li v-for="(v,index) in message" >{{v}}     <button @click="quchu(index)">-</button></li>
+        </ul>
+        <input type="text" v-model="value" >
+        <br>
+        <button @click="add_push" >添加</button>
+    </template>
+
+    <script src="../js/vue.js" ></script>
+
+    <script>
+        Vue.createApp({
+            template:'#my-app',
+            data:()=>{
+                return{
+                    message:[
+                        'asdff',
+                        'eqe',
+                        '7hh',
+                        'pl'
+                    ],
+                    value:''
+                }
+            },
+            methods:{
+              add_push(){
+                this.message.push(this.value)
+                this.value = ''
+                console.log(this.message)
+              },
+              quchu(index){
+                this.message.splice(index,1)
+                console.log(this.message)
+              }
+            }
+        }).mount('#app')
+    </script>
+
+</body>
+</html>

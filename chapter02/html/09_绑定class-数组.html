@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app" ></div>
+    <template id="my-app">
+        <div :class="['abc',title]" >绑定数组</div>
+        <div :class="['abc',title, isActivate ? 'activate':'false']" >绑定数组</div>
+        <div :class="['abc',title, isActivate ? 'activate':'false',{ac:isActivate}]" >绑定数组加上对象</div>
+    </template>
+    <script src="../js/vue.js" ></script>
+    <script>
+        Vue.createApp({
+            template:'#my-app',
+            data(){
+                return {
+                    title:'title',
+                    isActivate:true
+                }
+            },
+            methods:{
+
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<template>
+    <div class="main">
+        <main-banner></main-banner>
+        <main-product-list></main-product-list>
+    </div>
+</template>
+
+
+
+
+<script>
+import MainBanner from './MainBanner.vue'
+import MainProductList from './MainProductList.vue'
+
+export default {
+    components: {
+        MainBanner,
+        MainProductList
+    },
+    data() {
+        return {
+            message: 'hello Word',
+        }
+    },
+    methods: {
+        Message(event){
+            console.dir(event.target)
+        }
+    },
+}
+</script>
+
+
+
+<style scoped>
+*{color:red;}
+</style>

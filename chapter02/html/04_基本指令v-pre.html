@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <template id="www">
+        <div v-pre >{{ message }}</div>
+        <div v-pre >{{ print(a) }}</div>
+        <div>{{ message }}</div>
+        <div>{{ print("asdfasdf") }}</div>
+    </template>
+    <script src="../js/vue.js" ></script>
+    <script>
+        Vue.createApp({
+            template:'#www',
+            data:()=>{
+                return {
+                    message:'abc'
+                }
+            },
+            methods:{
+                print(a){
+                    return a
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>

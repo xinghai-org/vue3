@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <template id="my-app" >
+        <div>
+            <h2 :style="[{'color':finalColor,'fontSize':'16px'}]">abc</h2>
+            <h2 :style="[styleObj,styleObj2,stylefunc()]">abc</h2>
+        </div>
+    </template>
+
+    <script src="../js/vue.js" ></script>
+
+    <script>
+        Vue.createApp({
+            template:'#my-app',
+            data:()=>{
+                return{
+                    finalColor:'red',
+                    styleObj:{
+                        color:'red',
+                        findSize:'100px'
+                    },
+                    styleObj2:{
+                        background:'black'
+                    }
+                }
+            },
+            methods:{
+              stylefunc(){
+                return {
+                    width:'100px',
+                    height:'100px',
+                    margin:'auto',
+                    borderRadius:'15px',
+                    border:'1px solid red',
+                    boxShadow:'1px 1px 9px 2px black'
+                }
+              }
+            }
+        }).mount('#app')
+    </script>
+
+</body>
+</html>

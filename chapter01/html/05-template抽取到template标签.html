@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="app"></div>
+    <!-- 写模板 -->
+    <template id="why" >
+        <div>
+            <h2>{{ message }}</h2>
+            <h2>{{ counter }}</h2>
+        </div>
+    </template>
+    <!-- 写模板 -->
+    <script src="../js/vue.js" ></script>
+    <script>
+        Vue.createApp({
+            template:"#why",
+            data:()=>{
+                return {
+                    message:"使用template标签，优化计数器模板",
+                    counter:100
+                }
+            }
+        }).mount('.app')
+    </script>
+</body>
+</html>

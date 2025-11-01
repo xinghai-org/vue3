@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <template id="my-app" >
+        <div>
+            <h2>{{ message.name }}</h2>
+            <h2>{{ message.book.name }}</h2>
+            <button @click="changeMessage" >改变info</button>
+            <button @click="changeName" >改变info.name</button>
+            <button @click="changeBookName" >改变info.book.name</button>
+        </div>
+    </template>
+
+    <script src="../js/vue.js" ></script>
+
+    <script>
+        Vue.createApp({
+            template:'#my-app',
+            data:()=>{
+                return{
+                    message:{name:'abc',age:18,book:{name:"vue.js"}}
+                }
+            },
+            methods:{
+              changeMessage(){
+                this.message = {name:'aab',age:18,book:{name:"vue.js"}}
+              },
+              changeName(){
+                this.message.name = 'hahaha'
+              },
+              changeBookName(){
+                this.message.book.name = '666'
+              }
+            },
+            watch:{
+                message:{
+                    handler:function(newValue,oldValue){
+                        console.log(newValue,oldValue)
+                    },
+                    deep:true,
+                    immediate:true                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                }
+            }
+            ,
+            computed:{
+              
+            }
+        }).mount('#app')
+    </script>
+
+</body>
+</html>
